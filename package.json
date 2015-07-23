@@ -1,5 +1,5 @@
 {
-  "name": "bc-carousel",
+  "name": "bc-modal",
   "version": "0.0.1",
   "private": true,
   "description": "Bigcommerce Modal Module",
@@ -22,7 +22,8 @@
     "dependencies": {
       "jquery": "github:components/jquery@^2.1.4",
       "jquery-revealer": "github:pixelunion/jquery.revealer@^2.0.0",
-      "jquery-trend": "npm:jquery-trend@^0.1.0"
+      "jquery-trend": "npm:jquery-trend@^0.1.0",
+      "lodash": "npm:lodash@^3.10.0"
     },
     "devDependencies": {
       "babel": "npm:babel-core@4.7.16",

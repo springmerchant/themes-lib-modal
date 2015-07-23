@@ -2,7 +2,7 @@
 
 var fs = require('fs');
 var sass = require('node-sass');
-var opts = { file: './dist/scss/carousel.scss' };
+var opts = { file: './demo/scss/demo.scss' };
 
 sass.render(opts, function(error, result) {
   if (error) {

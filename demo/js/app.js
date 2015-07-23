@@ -4,8 +4,24 @@ import Modal from '../../dist/js/modal';
 $(function(){
   const $el = $('#modal-content');
 
-  new Modal({
-    el: $el
+  $('.fee-fi').click((event) => {
+    event.preventDefault();
+    alert('success!');
+  })
+
+  const modal = new Modal({
+    el: $el,
+    afterShow: ($el) => {
+      $el.find('.fo-fum').click((event) => {
+        event.preventDefault();
+        alert('success again!');
+      })
+    }
   });
 
-})
+  $('.launch-modal').on('click', (event) => {
+    event.preventDefault();
+    modal.open();
+  });
+
+});

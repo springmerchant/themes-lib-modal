@@ -3,91 +3,22 @@
   <head>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="demo/style.css">
-    <style type="text/css">
-      .carousel-item-info {
-        left: 5%;
-        top: 5%;
-      }
-
-      .carousel-pagination-item.active { color: #fff; }
-
-      .carousel-item.animating {
-        display: block;
-        transition: all 1s ease-out;
-      }
-
-      .carousel-item.animating-left {
-        transform: translateX(100%);
-        -webkit-transform: translateX(100%);
-      }
-
-      .carousel-item.animating-left.animating-out {
-        transform: translateX(-100%);
-        -webkit-transform: translateX(-100%);
-      }
-
-      .carousel-item.animating-right {
-        transform: translateX(-100%);
-        -webkit-transform: translateX(-100%);
-      }
-
-      .carousel-item.animating-right.animating-out {
-        transform: translateX(100%);
-        -webkit-transform: translateX(100%);
-      }
-
-      .carousel-item.visible,
-      .carousel-item.visible.animating-left,
-      .carousel-item.visible.animating-right {
-        display: block;
-        transform: translateX(0);
-        -webkit-transform: translateX(0);
-      }
-    </style>
   </head>
   <body>
     <div id="main">
 
-      <section class="carousel">
+      <a href="#" class="launch-modal">launch plz</a>
 
-          <figure class="carousel-item">
-            <a class="carousel-item-image" href="#">
-              <img src="demo/images/one.png" alt="alt text" />
-            </a>
-            <figcaption class="carousel-item-info">
-              <h2>First Heading</h2>
-              <p>text</p>
-              <a class="button" href="#">button</a>
-            </figcaption>
-          </figure>
 
-          <figure class="carousel-item">
-            <a class="carousel-item-image" href="#">
-              <img src="demo/images/two.png" alt="alt text" />
-            </a>
-            <figcaption class="carousel-item-info">
-              <h2>Second Heading</h2>
-              <p>text</p>
-              <a class="button" href="#">button</a>
-            </figcaption>
-          </figure>
+      <div id="modal-content">
+        <a href="#" class="modal-close">&times;</a>
+        <h1>Welcome to the modal</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ipsam facilis dolorem necessitatibus veritatis, nostrum fugiat numquam quisquam. Non, eligendi. Obcaecati ipsum iusto consectetur id esse saepe laborum cupiditate ipsa.</p>
+        <p>Corrupti eos dicta molestias aut earum iusto iste nisi possimus, temporibus dolor! Quaerat ex sunt, nostrum sint inventore totam possimus, voluptatibus laboriosam! Nostrum dignissimos, consequatur rerum aut repellat odio natus.</p>
+        <p><a href="#" class="fee-fi">this link gets a click binding on page load</a></p>
+        <p><a href="#" class="fo-fum">This link gets a click binding via callback</a></p>
+      </div>
 
-          <figure class="carousel-item">
-            <a class="carousel-item-image" href="#">
-              <img src="demo/images/three.png" alt="alt text" />
-            </a>
-            <figcaption class="carousel-item-info">
-              <h2>Third Heading</h2>
-              <p>text</p>
-              <a class="button" href="#">button</a>
-            </figcaption>
-          </figure>
-
-        <div class="carousel-navigation">
-          <span class="carousel-navigation-item carousel-previous">&larr;</span>
-          <span class="carousel-navigation-item carousel-next">&rarr;</span>
-        </div>
-      </section>
 
     </div>
     <script type="text/javascript" src="jspm_packages/system.js"></script>

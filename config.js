@@ -22,6 +22,7 @@ System.config({
     "jquery": "github:components/jquery@2.1.4",
     "jquery-revealer": "github:pixelunion/jquery.revealer@2.0.0",
     "jquery-trend": "npm:jquery-trend@0.1.0",
+    "lodash": "npm:lodash@3.10.0",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },
@@ -137,7 +138,7 @@ System.config({
       "js-tokens": "npm:js-tokens@1.0.0",
       "leven": "npm:leven@1.0.2",
       "line-numbers": "npm:line-numbers@0.2.0",
-      "lodash": "npm:lodash@3.9.3",
+      "lodash": "npm:lodash@3.10.0",
       "net": "github:jspm/nodelibs-net@0.1.2",
       "os": "github:jspm/nodelibs-os@0.1.0",
       "output-file-sync": "npm:output-file-sync@1.1.0",
@@ -416,7 +417,7 @@ System.config({
     "npm:line-numbers@0.2.0": {
       "left-pad": "npm:left-pad@0.0.3"
     },
-    "npm:lodash@3.9.3": {
+    "npm:lodash@3.10.0": {
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:miller-rabin@2.0.1": {
