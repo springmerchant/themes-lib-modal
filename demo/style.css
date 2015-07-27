@@ -34,6 +34,8 @@
   .modal-wrapper.animating-in {
     transition-delay: 0.1s; }
   .modal-wrapper.visible {
+    overflow-x: hidden;
+    overflow-y: auto;
     opacity: 1; }
 
 .modal {

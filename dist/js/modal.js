@@ -6,6 +6,7 @@ import revealer from 'jquery-revealer';
 export default class Modal {
   constructor(options) {
     this.$modal;
+    this.$modalContent;
     this.$dialog;
     this.$body = $('body');
     this.$el = $(options.el);
@@ -27,14 +28,22 @@ export default class Modal {
    * set up our fresh modal element
    */
   _init() {
-    // clone element
-    let $modalContent = this.$el.children().clone(true);
+    // get the contents
+    this.$modalContent = this.$el.children().detach();
     // create a new wrapping element
     this.$modal = $(this.wrapperHtml);
     // pop our content in there
-    this.$modal.find('.modal-content').append($modalContent);
+    this.$modal.find('.modal-content').append(this.$modalContent);
     // add backdrop
     this.$backdrop.appendTo(this.$body);
+  }
+
+  /**
+   * Put everything back where they used to be
+   */
+  _reset() {
+    this.$modal.detach();
+    this.$el.append(this.$modalContent);
   }
 
   /**
@@ -57,16 +66,15 @@ export default class Modal {
       });
     }
 
+    // bind callback function
     this.$modal.one('revealer-show', (event) => {
       this.options.afterShow($(event.currentTarget));
     });
 
+    // show both modal & backdrop
     this.$modal.add(this.$backdrop).revealer('show');
 
-    // bind destroy events
-    this.$modal.on('revealer-hide', () => {
-      this.$modal.remove();
-    });
+    // set up backdrop removal on hide
     this.$backdrop.on('revealer-hide', () => {
       this.$backdrop.remove();
     });
@@ -81,13 +89,14 @@ export default class Modal {
     this.$body.removeClass(this.options.bodyOverflowClass);
 
     this._unbindResize();
+    this._reset();
   }
 
   /**
    * close modal if we click only on backdrop
    */
   _bindOverlayClick() {
-    this.$modal.on('click', (event) => {
+    this.$modal.one('click', (event) => {
       if (event.target === event.currentTarget) {
         this._close();
       }
@@ -98,7 +107,7 @@ export default class Modal {
    * close modal if we click on a close button
    */
   _bindCloseClick() {
-    this.$modal.find(this.options.closeSelector).on('click', (event) => {
+    this.$modal.find(this.options.closeSelector).one('click', (event) => {
       event.preventDefault();
       this._close();
     });

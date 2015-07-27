@@ -12,7 +12,7 @@ $(function(){
   const modal = new Modal({
     el: $el,
     afterShow: ($el) => {
-      $el.find('.fo-fum').click((event) => {
+      $el.on('click', '.fo-fum', (event) => {
         event.preventDefault();
         alert('success again!');
       })
