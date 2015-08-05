@@ -96,7 +96,7 @@ export default class Modal {
    * close modal if we click only on backdrop
    */
   _bindOverlayClick() {
-    this.$modal.one('click', (event) => {
+    this.$modal.on('click', (event) => {
       if (event.target === event.currentTarget) {
         this._close();
       }
@@ -107,7 +107,7 @@ export default class Modal {
    * close modal if we click on a close button
    */
   _bindCloseClick() {
-    this.$modal.find(this.options.closeSelector).one('click', (event) => {
+    this.$modal.on('click', this.options.closeSelector, (event) => {
       event.preventDefault();
       this._close();
     });
