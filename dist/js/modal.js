@@ -18,7 +18,8 @@ export default class Modal {
       bodyOverflowClass: 'scroll-locked',
       centerVertically: true,
       closeSelector: '.modal-close',
-      afterShow: () => {}
+      afterShow: () => {},
+      afterHide: () => {}
     }, options);
 
     this.wrapperHtml = `<div id="${this.options.modalId}" class="modal-wrapper" tabindex="-1" role="dialog"><div class="${this.options.modalClass} modal" role="document"><div class="modal-content">`;
@@ -77,6 +78,7 @@ export default class Modal {
     // set up backdrop removal on hide
     this.$backdrop.on('revealer-hide', () => {
       this.$backdrop.remove();
+      this.options.afterHide();
     });
   }
 

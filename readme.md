@@ -59,6 +59,9 @@ A selector string for a close button within the modal.
 #### `afterShow`
 A popular television program produced out of Toronto that ran after MTV's _The Hills_ in the early 2000's.
 
+#### `afterHide`
+Not a television program, but a callback. Does what you think it would.
+
 ## Methods
 
 `open()` and `close()` should get you where you need to be.

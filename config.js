@@ -1,20 +1,18 @@
 System.config({
-  "transpiler": "babel",
-  "babelOptions": {
+  defaultJSExtensions: true,
+  transpiler: "babel",
+  babelOptions: {
     "optional": [
       "runtime"
     ]
   },
-  "paths": {
-    "*": "*.js",
+  paths: {
     "bc-carousel/*": "dist/*.js",
-    "github:*": "jspm_packages/github/*.js",
-    "npm:*": "jspm_packages/npm/*.js"
-  }
-});
+    "github:*": "jspm_packages/github/*",
+    "npm:*": "jspm_packages/npm/*"
+  },
 
-System.config({
-  "map": {
+  map: {
     "babel": "npm:babel-core@4.7.16",
     "babel-runtime": "npm:babel-runtime@4.7.16",
     "core-js": "npm:core-js@0.9.14",
@@ -501,10 +499,8 @@ System.config({
       "inherits": "npm:inherits@2.0.1",
       "isarray": "npm:isarray@0.0.1",
       "process": "github:jspm/nodelibs-process@0.1.1",
-      "stream": "github:jspm/nodelibs-stream@0.1.0",
       "stream-browserify": "npm:stream-browserify@1.0.0",
-      "string_decoder": "npm:string_decoder@0.10.31",
-      "util": "github:jspm/nodelibs-util@0.1.0"
+      "string_decoder": "npm:string_decoder@0.10.31"
     },
     "npm:recast@0.10.12": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",
@@ -637,4 +633,3 @@ System.config({
     }
   }
 });
-
