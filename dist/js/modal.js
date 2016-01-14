@@ -54,6 +54,7 @@ export default class Modal {
     this._init();
     this._bindOverlayClick();
     this._bindCloseClick();
+    this._bindCloseEsc();
 
     this.$body.addClass(this.options.bodyOverflowClass).append(this.$modal);
 
@@ -112,6 +113,18 @@ export default class Modal {
     this.$modal.on('click', this.options.closeSelector, (event) => {
       event.preventDefault();
       this._close();
+    });
+  }
+
+  /**
+   * close modal if we press the escape button when it's visible
+   */
+  _bindCloseEsc() {
+    $(document).on('keyup', (event) => {
+      if (event.keyCode === 27 && this.$modal.revealer('isVisible')) {
+        event.preventDefault();
+        this._close();
+      }
     });
   }
 
