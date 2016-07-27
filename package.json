@@ -22,7 +22,7 @@
     "git-add": "git add ."
   },
   "jspm": {
-    "main": "assets/js/modal",
+    "main": "modal.js",
     "directories": {
       "lib": "src"
     },
