@@ -1,5 +1,8 @@
 # Bigcommerce Modal Module
 
+## Important Note
+As of version 1.0.0, when installing using `jspm`, you will need to update your `theme.scss` to reflect the new version for includes.
+
 ## Installation
 JSPM:
 ```
