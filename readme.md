@@ -1,8 +1,13 @@
 # Bigcommerce Modal Module
 
 ## Installation
+JSPM:
 ```
 jspm install --save bc-modal=bitbucket:pixelunion/bc-modal
+```
+NPM:
+```
+npm install --save bitbucket:pixelunion/bc-modal
 ```
 
 ## Usage
