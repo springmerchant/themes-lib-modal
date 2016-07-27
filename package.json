@@ -1,6 +1,6 @@
 {
   "name": "bc-modal",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "private": true,
   "description": "Bigcommerce Modal Module",
   "main": "dist/js/modal",
