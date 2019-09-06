@@ -39,10 +39,13 @@
     }
   },
   "dependencies": {
-    "jquery": "^3.1.0",
+    "jquery": "^3.4.1",
     "jquery-revealer": "github:pixelunion/jquery.revealer",
     "jquery-trend": "^0.1.0",
     "lodash": "^4.14.0"
   },
-  "pre-commit": ["gulp-bundle", "git-add"]
+  "pre-commit": [
+    "gulp-bundle",
+    "git-add"
+  ]
 }
