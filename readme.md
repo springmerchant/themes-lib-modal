@@ -5,7 +5,7 @@
 NPM:
 
 ```
-npm install --save bitbucket:pixelunion/bc-modal
+npm i github:pixelunion/bc-modal
 ```
 
 ## Usage
