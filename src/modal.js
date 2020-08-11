@@ -12,15 +12,20 @@ export default class Modal {
     this.$el = $(options.el);
     this.$backdrop = $('<div class="modal-overlay">');
 
-    this.options = $.extend({
-      modalId: 'modal',
-      modalClass: '',
-      bodyOverflowClass: 'scroll-locked',
-      centerVertically: true,
-      closeSelector: '.modal-close',
-      afterShow: () => {},
-      afterHide: () => {}
-    }, options);
+    this.options = $.extend(
+      {
+        modalId: 'modal',
+        modalClass: '',
+        bodyOverflowClass: 'scroll-locked',
+        centerVertically: true,
+        closeSelector: '.modal-close',
+        afterShow: () => {},
+        afterHide: () => {},
+      },
+      options
+    );
+
+    console.log('using modal.js');
 
     this.wrapperHtml = `<div id="${this.options.modalId}" class="modal-wrapper" tabindex="-1" role="dialog"><div class="${this.options.modalClass} modal" role="document"><div class="modal-content">`;
   }
@@ -103,7 +108,7 @@ export default class Modal {
       if (event.target === event.currentTarget) {
         this._close();
       }
-    })
+    });
   }
 
   /**
@@ -128,14 +133,15 @@ export default class Modal {
     });
   }
 
-
   // -------------------------- Positioning -------------------------- //
 
   /**
    * calculate margin-top for element
    */
   _reposition() {
-    if (!this.$dialog || !this.options.centerVertically) { return; }
+    if (!this.$dialog || !this.options.centerVertically) {
+      return;
+    }
 
     const elHeight = this.$dialog.outerHeight();
     const windowHeight = $(window).height();
@@ -153,7 +159,6 @@ export default class Modal {
   _unbindResize() {
     $(window).off('resize.modal');
   }
-
 
   // -------------------------- Expose Public Methods -------------------------- //
 

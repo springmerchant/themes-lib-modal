@@ -47,6 +47,8 @@ var Modal = function () {
       afterHide: function afterHide() {}
     }, options);
 
+    console.log('using modal.js');
+
     this.wrapperHtml = '<div id="' + this.options.modalId + '" class="modal-wrapper" tabindex="-1" role="dialog"><div class="' + this.options.modalClass + ' modal" role="document"><div class="modal-content">';
   }
 

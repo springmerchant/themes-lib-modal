@@ -8,8 +8,7 @@
   background-color: rgba(0, 0, 0, 0.3);
   display: none;
   opacity: 0; }
-  .modal-overlay.animating,
-  .modal-overlay.visible {
+  .modal-overlay.animating, .modal-overlay.visible {
     display: block;
     transition: opacity 0.3s ease; }
   .modal-overlay.visible {
@@ -27,8 +26,7 @@
   -webkit-overflow-scrolling: touch;
   outline: 0;
   opacity: 0; }
-  .modal-wrapper.animating,
-  .modal-wrapper.visible {
+  .modal-wrapper.animating, .modal-wrapper.visible {
     display: block;
     transition: opacity 0.2s ease; }
   .modal-wrapper.animating-in {
