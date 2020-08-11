@@ -23,23 +23,6 @@
     "gulp-bundle": "gulp bundle",
     "git-add": "git add dist/js/modal.js"
   },
-  "jspm": {
-    "main": "modal.js",
-    "directories": {
-      "lib": "src"
-    },
-    "dependencies": {
-      "jquery": "github:components/jquery@^2.1.4",
-      "jquery-revealer": "github:pixelunion/jquery.revealer@^2.0.0",
-      "jquery-trend": "npm:jquery-trend@^0.1.0",
-      "lodash": "npm:lodash@^3.10.0"
-    },
-    "devDependencies": {
-      "babel": "npm:babel-core@4.7.16",
-      "babel-runtime": "npm:babel-runtime@4.7.16",
-      "core-js": "npm:core-js@^0.8.4"
-    }
-  },
   "dependencies": {
     "jquery": "^3.5.1",
     "jquery-revealer": "github:pixelunion/jquery.revealer",
