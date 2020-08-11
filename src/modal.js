@@ -1,7 +1,7 @@
 import $ from 'jquery';
-import _ from 'lodash';
 import trend from 'jquery-trend';
 import revealer from 'jquery-revealer';
+import debounce from 'just-debounce';
 
 export default class Modal {
   constructor(options) {
@@ -12,15 +12,18 @@ export default class Modal {
     this.$el = $(options.el);
     this.$backdrop = $('<div class="modal-overlay">');
 
-    this.options = $.extend({
-      modalId: 'modal',
-      modalClass: '',
-      bodyOverflowClass: 'scroll-locked',
-      centerVertically: true,
-      closeSelector: '.modal-close',
-      afterShow: () => {},
-      afterHide: () => {}
-    }, options);
+    this.options = $.extend(
+      {
+        modalId: 'modal',
+        modalClass: '',
+        bodyOverflowClass: 'scroll-locked',
+        centerVertically: true,
+        closeSelector: '.modal-close',
+        afterShow: () => {},
+        afterHide: () => {},
+      },
+      options
+    );
 
     this.wrapperHtml = `<div id="${this.options.modalId}" class="modal-wrapper" tabindex="-1" role="dialog"><div class="${this.options.modalClass} modal" role="document"><div class="modal-content">`;
   }
@@ -103,7 +106,7 @@ export default class Modal {
       if (event.target === event.currentTarget) {
         this._close();
       }
-    })
+    });
   }
 
   /**
@@ -128,14 +131,15 @@ export default class Modal {
     });
   }
 
-
   // -------------------------- Positioning -------------------------- //
 
   /**
    * calculate margin-top for element
    */
   _reposition() {
-    if (!this.$dialog || !this.options.centerVertically) { return; }
+    if (!this.$dialog || !this.options.centerVertically) {
+      return;
+    }
 
     const elHeight = this.$dialog.outerHeight();
     const windowHeight = $(window).height();
@@ -147,13 +151,17 @@ export default class Modal {
   }
 
   _bindResize() {
-    $(window).on('resize.modal', _.debounce(this._reposition.bind(this), 100));
+    $(window).on(
+      'resize.modal',
+      debounce(() => {
+        this._reposition.bind(this);
+      }, 100)
+    );
   }
 
   _unbindResize() {
     $(window).off('resize.modal');
   }
-
 
   // -------------------------- Expose Public Methods -------------------------- //
 
