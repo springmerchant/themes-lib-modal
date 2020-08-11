@@ -10,10 +10,6 @@ var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _lodash = require('lodash');
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
 var _jqueryTrend = require('jquery-trend');
 
 var _jqueryTrend2 = _interopRequireDefault(_jqueryTrend);
@@ -21,6 +17,10 @@ var _jqueryTrend2 = _interopRequireDefault(_jqueryTrend);
 var _jqueryRevealer = require('jquery-revealer');
 
 var _jqueryRevealer2 = _interopRequireDefault(_jqueryRevealer);
+
+var _justDebounce = require('just-debounce');
+
+var _justDebounce2 = _interopRequireDefault(_justDebounce);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46,8 +46,6 @@ var Modal = function () {
       afterShow: function afterShow() {},
       afterHide: function afterHide() {}
     }, options);
-
-    console.log('using modal.js');
 
     this.wrapperHtml = '<div id="' + this.options.modalId + '" class="modal-wrapper" tabindex="-1" role="dialog"><div class="' + this.options.modalClass + ' modal" role="document"><div class="modal-content">';
   }
@@ -209,7 +207,11 @@ var Modal = function () {
   }, {
     key: '_bindResize',
     value: function _bindResize() {
-      (0, _jquery2.default)(window).on('resize.modal', _lodash2.default.debounce(this._reposition.bind(this), 100));
+      var _this5 = this;
+
+      (0, _jquery2.default)(window).on('resize.modal', (0, _justDebounce2.default)(function () {
+        _this5._reposition.bind(_this5);
+      }, 100));
     }
   }, {
     key: '_unbindResize',
