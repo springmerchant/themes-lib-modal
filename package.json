@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "jquery": "^3.5.1",
-    "jquery-revealer": "github:pixelunion/jquery.revealer",
+    "jquery-revealer": "github:springmerchant/jquery.revealer",
     "jquery-trend": "^0.1.0",
     "just-debounce": "^1.0.0"
   },
